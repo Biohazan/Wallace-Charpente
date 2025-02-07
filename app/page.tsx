@@ -1,6 +1,6 @@
 import { Hammer, Ruler, Shield, TreePine, Clock, Phone } from 'lucide-react'
 
-import carpenterBg from '@/public/charpentierBackGround.webp'
+import carpenterBg from '@/public/connerie.jpg'
 import Image from 'next/image'
 
 export default function Home() {
@@ -24,7 +24,7 @@ export default function Home() {
         <nav className="relative z-10 flex items-center justify-between px-6 py-4 lg:px-12">
           <div className="flex items-center space-x-2 text-white">
             <Hammer className="h-8 w-8" />
-            <span className="text-2xl font-bold">Wallace Charpente</span>
+            <span className="text-2xl font-bold">Wallace Et Grosse Bite Charpente</span>
           </div>
           <div className="hidden md:flex space-x-8 text-white">
             <a href="#services" className="hover:text-[#a8c69f]">
@@ -45,13 +45,13 @@ export default function Home() {
         <div className="relative z-10 flex items-center justify-center h-full">
           <div className="text-center text-white px-4">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Crafting Excellence in Wood
+              Les pilonneurs de l&apos;extrème
             </h1>
             <p className="text-xl md:text-2xl mb-8">
-              Custom carpentry solutions with attention to detail
+             Pret pour le 7ème ciel ?
             </p>
             <button className="bg-[#6b4423] hover:bg-[#8b5931] text-white px-8 py-3 rounded-lg text-lg transition duration-300">
-              Get a Quote
+              Prend ton ticket !
             </button>
           </div>
         </div>
