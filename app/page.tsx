@@ -2,7 +2,6 @@ import { Hammer, Ruler, Shield, TreePine, Clock, Phone } from 'lucide-react'
 import carpenterBg from '@/public/charpentierBackGround.webp'
 import Image from 'next/image'
 
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#f5f7f2] font-playwrite_IT_Moderna">
@@ -17,30 +16,35 @@ export default function Home() {
         ></Image>
         <div className="absolute inset-0 bg-black/20 "></div>
 
-        <nav className="relative z-10 flex items-center justify-between px-6 py-4 lg:px-12 bg-secondary">
+        <nav className="relative flex items-center justify-between px-6 py-4 lg:px-12 bg-secondary">
           <div className="flex items-center space-x-2 text-primary">
             <Hammer className="h-8 w-8" />
-            <span className="text-2xl font-bold font-bungee">Wallace Charpente</span>
+            <span className="text-2xl font-bold font-bungee">
+              Wallace Charpente
+            </span>
           </div>
           <div className="hidden md:flex space-x-8 text-primary">
             <a href="#services" className="hover:text-[#a8c69f]">
               Services
             </a>
-            <a href="#about" className="hover:text-[#a8c69f]">
-              A Propos
-            </a>
+
             <a href="#portfolio" className="hover:text-[#a8c69f]">
               Portfolio
             </a>
             <a href="#contact" className="hover:text-[#a8c69f]">
               Contact
             </a>
+            <a href="#about" className="hover:text-[#a8c69f]">
+              A Propos
+            </a>
           </div>
         </nav>
 
-        <div className="relative z-20 flex items-center justify-center h-full">
+        <div className="relative flex items-center justify-center h-full">
           <div className="absolute top-[5vw]  right-[4vw] ml-[3vw] text-center text-amber-950  rounded-sm rounded-bl-3xl rounded-tr-3xl px-14 pt-4">
-            <h1 className={`text-3xl md:text-5xl font-extrabold mb-6 font-bungee underline underline-offset-8 `}>
+            <h1
+              className={`text-3xl md:text-5xl font-extrabold mb-6 font-bungee underline underline-offset-8 `}
+            >
               Notre expertise au service de votre toiture
             </h1>
             <p className="text-lg md:text-2xl font-medium font-sans mb-2">
@@ -98,25 +102,23 @@ export default function Home() {
               {service?.image && (
                 <Image
                   src={service.image}
-                  className="absolute opacity-50 object-cover group-hover:scale-110 group-hover:opacity-100 transition duration-300"
+                  className="absolute  object-cover group-hover:scale-110 group-hover:opacity-100 transition duration-300"
                   alt="Cover Image"
                   fill
                   quality={70}
                 />
               )}
 
-              {/* <div className="absolute inset-0 bg-white/70 z-10"></div> */}
-              <div className="absolute flex flex-col w-full text-center p-6 top-24 left-0 group-hover:opacity-0 transition duration-300">
+              <div className="absolute inset-0 bg-[#e8efe5]/60 group-hover:-translate-y-36 transition duration-300"></div>
+              <div className="absolute flex flex-col w-full text-center p-6 top-24 left-0 group-hover:-translate-y-28 transition duration-300">
                 {/* <div className="text-[#6b4423] mb-4">{service.icon}</div> */}
                 <h3 className="text-2xl font-extrabold text-[#2c1810] mb-2 underline underline-offset-4">
                   {service.title}
                 </h3>
-                <p className="text-amber-950 font-bold bg-transparent">
-                  {service.desc}
-                </p>
+                <p className="text-amber-950 font-bold">{service.desc}</p>
               </div>
-              <div className="hidden absolute bottom-4 left-0 w-full group-hover:flex justify-center">
-                <p className="text-white bg-amber-900 rounded-lg px-4 py-2">
+              <div className="translate-x-[700px] absolute flex bottom-4 left-0 w-full group-hover:translate-x-0 justify-center ransition duration-300">
+                <p className="text-white bg-amber-900 rounded-lg px-4 py-2 ">
                   En savoir plus
                 </p>
               </div>
@@ -176,10 +178,8 @@ export default function Home() {
                 <Phone className="h-6 w-6" />
                 <div>
                   <h3 className="font-bold">Téléphone</h3>
-                  <a
-                    href="tel:0612450688"
-                  >
-                    <p className=''>06 12 45 06 88</p>
+                  <a href="tel:0612450688">
+                    <p className="">06 12 45 06 88</p>
                   </a>
                 </div>
               </div>
@@ -216,7 +216,10 @@ export default function Home() {
             <span className="text-xl font-bold">Wallace Charpente</span>
           </div>
           <div className="text-center md:text-right">
-            <p>© 2024 Wallace Charpente. All rights reserved.</p>
+            <p>© 2024 Wallace Charpente.</p>
+            <a href="https://www.rozczko-rodolphe.fr/" className="underline">
+              Site réalisé par Rozczko Rodolphe
+            </a>
           </div>
         </div>
       </footer>
