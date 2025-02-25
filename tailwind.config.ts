@@ -11,6 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "var(--primary)",
+        secondary: "var(--secondary)"
       },
       fontFamily: {
         playwrite_IT_Moderna: ["var(--font-playwrite)"],

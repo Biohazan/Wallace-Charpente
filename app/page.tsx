@@ -10,19 +10,19 @@ export default function Home() {
       <header className="relative h-[90vh]">
         <Image
           src={carpenterBg}
-          className="fixed inset-0 w-full object-cover object-bottom"
+          className="absolute inset-0 w-full object-cover object-bottom"
           alt="Charpentier sur un toit"
           fill
           quality={100}
         ></Image>
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/20 "></div>
 
-        <nav className="relative z-10 flex items-center justify-between px-6 py-4 lg:px-12">
-          <div className="flex items-center space-x-2 text-white">
+        <nav className="relative z-10 flex items-center justify-between px-6 py-4 lg:px-12 bg-secondary">
+          <div className="flex items-center space-x-2 text-primary">
             <Hammer className="h-8 w-8" />
             <span className="text-2xl font-bold font-bungee">Wallace Charpente</span>
           </div>
-          <div className="hidden md:flex space-x-8 text-white">
+          <div className="hidden md:flex space-x-8 text-primary">
             <a href="#services" className="hover:text-[#a8c69f]">
               Services
             </a>
@@ -38,13 +38,16 @@ export default function Home() {
           </div>
         </nav>
 
-        <div className="relative z-10 flex items-center justify-center h-full">
-          <div className="absolute top-[5vw]  right-[4vw] ml-[3vw] text-center text-amber-950 bg-[#e8efe5]/60 rounded-sm rounded-bl-3xl rounded-tr-3xl px-4 pt-4">
-            <h1 className={`text-3xl md:text-4xl font-extrabold mb-6 font-bungee underline underline-offset-8 `}>
+        <div className="relative z-20 flex items-center justify-center h-full">
+          <div className="absolute top-[5vw]  right-[4vw] ml-[3vw] text-center text-amber-950  rounded-sm rounded-bl-3xl rounded-tr-3xl px-14 pt-4">
+            <h1 className={`text-3xl md:text-5xl font-extrabold mb-6 font-bungee underline underline-offset-8 `}>
               Notre expertise au service de votre toiture
             </h1>
-            <p className="text-lg md:text-xl font-bungee mb-8">
+            <p className="text-lg md:text-2xl font-medium font-sans mb-2">
               Votre Charpentier, Couvreur, Zingueur en Isère (38), Rhone (69)
+            </p>
+            <p className="text-lg md:text-2xl font-medium font-sans mb-8">
+              Nous intervenons partout, ici et ailleurs...
             </p>
           </div>
         </div>
@@ -99,7 +102,7 @@ export default function Home() {
               {/* <div className="absolute inset-0 bg-white/70 z-10"></div> */}
               <div className="absolute flex flex-col w-full text-center p-6 top-24 left-0 group-hover:opacity-0 transition duration-300">
                 {/* <div className="text-[#6b4423] mb-4">{service.icon}</div> */}
-                <h3 className="text-2xl font-extrabold text-[#2c1810] mb-2">
+                <h3 className="text-2xl font-extrabold text-[#2c1810] mb-2 underline underline-offset-4">
                   {service.title}
                 </h3>
                 <p className="text-amber-950 font-bold bg-transparent">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playwrite_IT_Moderna, Bungee_Inline } from "next/font/google";
+import { Playwrite_IT_Moderna, Caveat } from "next/font/google";
 import "./globals.css";
 
 const playwrite_IT_Moderna = Playwrite_IT_Moderna({
@@ -7,7 +7,7 @@ const playwrite_IT_Moderna = Playwrite_IT_Moderna({
   variable: '--font-playwrite',
 })
 
-const bungee_Inline = Bungee_Inline({
+const bungee_Inline = Caveat({
   weight: '400',
   variable: '--font-bungee',
   subsets: ['latin']
