@@ -68,6 +68,12 @@ export default function Home() {
             },
             {
               icon: <Ruler className="h-12 w-12" />,
+              title: 'Bâchage',
+              desc: "Bâchage d'urgence de votre toiture",
+              image: '/bachage.jpg',
+            },
+            {
+              icon: <Ruler className="h-12 w-12" />,
               title: 'Zinguerie',
               desc: 'Abergement de cheminée, noues et caniveaux.',
               image: '/zinguerie.webp',
