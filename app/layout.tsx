@@ -10,6 +10,7 @@ const playwrite_IT_Moderna = Playwrite_IT_Moderna({
 const bungee_Inline = Bungee_Inline({
   weight: '400',
   variable: '--font-bungee',
+  subsets: ['latin']
 })
 
 export const metadata: Metadata = {
