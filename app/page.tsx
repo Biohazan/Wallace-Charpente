@@ -1,30 +1,26 @@
 import { Hammer, Ruler, Shield, TreePine, Clock, Phone } from 'lucide-react'
-
-import carpenterBg from '@/public/connerie.jpg'
+import carpenterBg from '@/public/charpentierBackGround.webp'
 import Image from 'next/image'
+
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#f5f7f2]">
+    <div className="min-h-screen bg-[#f5f7f2] font-playwrite_IT_Moderna">
       {/* Hero Section */}
-      <header className="relative h-screen">
+      <header className="relative h-[90vh]">
         <Image
           src={carpenterBg}
-          className="absolute inset-0 h-screen w-full bg-cover bg-center"
+          className="fixed inset-0 w-full object-cover object-bottom"
           alt="Charpentier sur un toit"
-          layout="fill"
-          objectFit="cover"
+          fill
           quality={100}
-          // style={{
-          //   backgroundImage: carpenterBg,
-          // }}
         ></Image>
         <div className="absolute inset-0 bg-black/40"></div>
 
         <nav className="relative z-10 flex items-center justify-between px-6 py-4 lg:px-12">
           <div className="flex items-center space-x-2 text-white">
             <Hammer className="h-8 w-8" />
-            <span className="text-2xl font-bold">Wallace Et Grosse Bite Charpente</span>
+            <span className="text-2xl font-bold font-bungee">Wallace Charpente</span>
           </div>
           <div className="hidden md:flex space-x-8 text-white">
             <a href="#services" className="hover:text-[#a8c69f]">
@@ -43,52 +39,78 @@ export default function Home() {
         </nav>
 
         <div className="relative z-10 flex items-center justify-center h-full">
-          <div className="text-center text-white px-4">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Les pilonneurs de l&apos;extrème
+          <div className="absolute top-[5vw]  right-[4vw] ml-[3vw] text-center text-amber-950 bg-[#e8efe5]/60 rounded-sm rounded-bl-3xl rounded-tr-3xl px-4 pt-4">
+            <h1 className={`text-3xl md:text-4xl font-extrabold mb-6 font-bungee underline underline-offset-8 `}>
+              Notre expertise au service de votre toiture
             </h1>
-            <p className="text-xl md:text-2xl mb-8">
-             Pret pour le 7ème ciel ?
+            <p className="text-lg md:text-xl font-bungee mb-8">
+              Votre Charpentier, Couvreur, Zingueur en Isère (38), Rhone (69)
             </p>
-            <button className="bg-[#6b4423] hover:bg-[#8b5931] text-white px-8 py-3 rounded-lg text-lg transition duration-300">
-              Prend ton ticket !
-            </button>
           </div>
         </div>
       </header>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-6 lg:px-12">
-        <h2 className="text-4xl font-bold text-center text-[#2c1810] mb-16">
+      <section id="services" className="py-12 px-6 lg:px-12">
+        <h2 className="text-4xl font-extrabold text-center text-[#2c1810] mb-16">
           Nos Services
         </h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-8">
           {[
             {
               icon: <TreePine className="h-12 w-12" />,
-              title: 'Custom Furniture',
-              desc: 'Bespoke pieces tailored to your space',
+              title: 'Sarking',
+              desc: 'Isolation de votre maison par la toiture',
+              image: '/saul.png',
             },
             {
               icon: <Ruler className="h-12 w-12" />,
-              title: 'Home Renovation',
-              desc: 'Complete woodwork solutions for your home',
+              title: 'Zinguerie',
+              desc: 'Abergement de cheminée, noues et caniveaux.',
+              image: '/zinguerie.webp',
             },
             {
               icon: <Shield className="h-12 w-12" />,
-              title: 'Restoration',
-              desc: 'Bringing old wood back to life',
+              title: 'Charpente',
+              desc: 'Construction ou rénovation de votre charpente',
+              image: '/charpentierBackGround.webp',
+            },
+            {
+              icon: <Shield className="h-12 w-12" />,
+              title: 'Couverture',
+              desc: 'Construction ou rénovation de votre toiture',
+              image: '/couverture.jpg',
             },
           ].map((service, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300"
+              className="relative h-56 w-full lg:w-2/5 p-8 overflow-hidden group cursor-pointer rounded-lg shadow-lg hover:shadow-2xl transition duration-300"
             >
-              <div className="text-[#6b4423] mb-4">{service.icon}</div>
-              <h3 className="text-xl font-bold text-[#2c1810] mb-2">
-                {service.title}
-              </h3>
-              <p className="text-gray-600">{service.desc}</p>
+              {service?.image && (
+                <Image
+                  src={service.image}
+                  className="absolute opacity-50 object-cover group-hover:scale-110 group-hover:opacity-100 transition duration-300"
+                  alt="Cover Image"
+                  fill
+                  quality={70}
+                />
+              )}
+
+              {/* <div className="absolute inset-0 bg-white/70 z-10"></div> */}
+              <div className="absolute flex flex-col w-full text-center p-6 top-24 left-0 group-hover:opacity-0 transition duration-300">
+                {/* <div className="text-[#6b4423] mb-4">{service.icon}</div> */}
+                <h3 className="text-2xl font-extrabold text-[#2c1810] mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-amber-950 font-bold bg-transparent">
+                  {service.desc}
+                </p>
+              </div>
+              <div className="hidden absolute bottom-4 left-0 w-full group-hover:flex justify-center">
+                <p className="text-white bg-amber-900 rounded-lg px-4 py-2">
+                  En savoir plus
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -96,8 +118,8 @@ export default function Home() {
 
       {/* Featured Work */}
       <section id="portfolio" className="bg-[#e8efe5] py-20 px-6 lg:px-12">
-        <h2 className="text-4xl font-bold text-center text-[#2c1810] mb-16">
-          Featured Work
+        <h2 className="text-4xl font-extrabold text-center text-[#2c1810] mb-16">
+          Nos différents projets
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {[
@@ -109,14 +131,16 @@ export default function Home() {
               key={index}
               className="relative group overflow-hidden rounded-lg"
             >
-              <img
+              <Image
                 src={img}
                 alt={`Project ${index + 1}`}
                 className="w-full h-64 object-cover transition duration-300 group-hover:scale-110"
+                width={100}
+                height={100}
               />
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
                 <button className="bg-[#6b4423] text-white px-6 py-2 rounded">
-                  View Project
+                  Voir le projet
                 </button>
               </div>
             </div>
@@ -128,43 +152,47 @@ export default function Home() {
       <section id="contact" className="py-20 px-6 lg:px-12">
         <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-xl p-8">
           <h2 className="text-4xl font-bold text-center text-[#2c1810] mb-8">
-            Contact Us
+            Contactez nous
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-6">
               <div className="flex items-center space-x-4 text-[#6b4423]">
                 <Clock className="h-6 w-6" />
                 <div>
-                  <h3 className="font-bold">Working Hours</h3>
-                  <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
+                  <h3 className="font-bold">Horaires</h3>
+                  <p>Lundi - Vendredi: 8:00 - 18:00</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4 text-[#6b4423]">
                 <Phone className="h-6 w-6" />
                 <div>
-                  <h3 className="font-bold">Phone</h3>
-                  <p>(555) 123-4567</p>
+                  <h3 className="font-bold">Téléphone</h3>
+                  <a
+                    href="tel:0612450688"
+                  >
+                    <p className=''>06 12 45 06 88</p>
+                  </a>
                 </div>
               </div>
             </div>
             <form className="space-y-4">
               <input
                 type="text"
-                placeholder="Your Name"
+                placeholder="Votre nom - prenom"
                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#6b4423]"
               />
               <input
                 type="email"
-                placeholder="Your Email"
+                placeholder="Votre Email"
                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#6b4423]"
               />
               <textarea
-                placeholder="Your Message"
+                placeholder="Votre Message"
                 rows={4}
                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#6b4423]"
               ></textarea>
               <button className="w-full bg-[#6b4423] hover:bg-[#8b5931] text-white px-6 py-3 rounded transition duration-300">
-                Send Message
+                Envoyer
               </button>
             </form>
           </div>

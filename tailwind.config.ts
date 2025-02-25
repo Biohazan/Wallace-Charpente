@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        playwrite_IT_Moderna: ["var(--font-playwrite)"],
+        bungee: ["var(--font-bungee)"],
+      }
     },
   },
   plugins: [],

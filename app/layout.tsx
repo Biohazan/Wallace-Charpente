@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Playwrite_IT_Moderna, Bungee_Inline } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const playwrite_IT_Moderna = Playwrite_IT_Moderna({
+  display: 'swap',
+  variable: '--font-playwrite',
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const bungee_Inline = Bungee_Inline({
+  weight: '400',
+  variable: '--font-bungee',
+})
 
 export const metadata: Metadata = {
   title: "Wallace Charpente",
-  description: "Des charpentiers que vous n'êtes pas pret d'oublier",
+  description: "Charpentier, couvreur, zingueur, sarking,  mais aussi recherche de fuite, bachâge...",
 };
 
 export default function RootLayout({
@@ -23,9 +23,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${playwrite_IT_Moderna.variable} ${bungee_Inline.variable} antialiased`}
       >
         {children}
       </body>
